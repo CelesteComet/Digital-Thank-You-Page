@@ -1,0 +1,40 @@
+<div>
+  <h1>CREATE A GIFT</h1>
+  <form class='gift-form' action='/orders' method='POST'>
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> />
+    <select>
+      <option>Big Box of Chocolates 10$</option>
+      <option>Medium Box of Chocolates 5$</option>
+      <option>Small Box of Chocolates 1$</option>
+    </select>
+    <label>Giftee Email
+      <input type="email" name="giftee_email"> 
+    </label>
+    <label>Child Name
+      <input type="text" name="child_name"> 
+    </label>
+    <label>Shipping Date
+      <input type="date" name="shipping_date"> 
+    </label>
+    <label>Payment Info
+      <input type="" name="payment_info" placeholder="xxxx-xxxx-xxxx-xxxx"> 
+    </label>
+    <label>Billing Address
+      <input type="address" name="billing_address"> 
+    </label>
+    <label>Shipping Address
+      <input type="address" name="shipping_address"> 
+    </label>
+    <input type="submit" value="Send Gift">
+  </form>
+</div>
+
+
+<!--       # t.string :item
+      # t.integer :order_total
+      # t.string :giftee_email
+      # t.string :child_name
+      # t.date :shipping_date
+      # t.integer :payment_info
+      # t.text :billing_address
+      # t.text :shipping_address -->
