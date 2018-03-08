@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: 'giftSendingApp@chocolates.com'
+  default from: 'hei22190@gmail.com'
 
   def thank_you_email(order)
     @child_name = order.child_name 

@@ -5,8 +5,9 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      msg = OrderMailer.thank_you_email(@order)
-      msg.deliver_now
+      SendEmailJob.set(wait: 20.seconds).perform_later(@order)
+      # msg = OrderMailer.thank_you_email(@order)
+      # msg.deliver_now
       render :show
     else 
       flash.now[:errors] = @gift.errors.full_messages
